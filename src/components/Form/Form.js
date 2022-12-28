@@ -1,24 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-export default function From() {
+export default function From({heading}) {
+    
     return (
-        <div>
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+        <>
+            <div className="container my-8">
+                <h1 className='text-3xl'>{heading}</h1>
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" id="mytext" rows="9"></textarea>
+                    </div>
+                    <button className="btn_primary uppercase">Convert To uppercase</button>
+                    <button className="btn_primary lowercase">Convert To lowercase</button>
+                </form>
+            </div>
+            
+        </>
     )
 }

@@ -1,11 +1,12 @@
 import './App.css';
+import From from './components/Form/Form';
 import Header from './components/Header/Header';
 
 function App() {
   return (
     <>
-      <Header logo="TextUtils" home ={123} about="About" contact="Contact Us"/>
-      {/* <Header /> */}
+      <Header logo="TextUtils" home ="Home" about="About" contact="Contact Us"/>
+      <From heading='Enter the text to analyze' />
     </>
   );
 }
