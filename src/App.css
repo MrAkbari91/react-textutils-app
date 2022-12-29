@@ -19,9 +19,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.f_flex {
-  display: flex;
-}
+
 a {
   text-decoration: none;
   color: black;
@@ -98,9 +96,7 @@ h1 {
 p {
   color: #3c3e41;
 }
-.text-center {
-  text-align: center;
-}
+
 .primary_color {
   color: #ff014f;
 }

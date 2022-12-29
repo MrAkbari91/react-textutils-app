@@ -10,18 +10,10 @@ font-family: 'Indie Flower', cursive;
 font-family: 'Nothing You Could Do', cursive;
 font-family: 'Shadows Into Light', cursive; 
 */
-header {
-  height: 10vh;
-  line-height: 10vh;
-}
-
 .logo {
   font-family: 'Nothing You Could Do', cursive;
 }
 
-header .container {
-  padding-top: 15px;
-}
 
 header ul li {
   margin-left: 30px;
@@ -47,13 +39,8 @@ header ul li a:hover {
   color: #ff014f;
 }
 
-.home-btn {
-  background: linear-gradient(145deg, #e2e8ec, #ffffff);
-  box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
-}
 
 .home-btn:hover {
-  background: #ff014f;
   color: white;
 }
 
@@ -87,7 +74,7 @@ header ul li a:hover {
     transition: all 0.5s ease-in-out;
     width: 60%;
     height: 100vh;
-    background-color: white;
+    /* background-color: white; */
     z-index: 888;
   }
 
@@ -118,8 +105,6 @@ header ul li a:hover {
   }
 
   .close.home-btn {
-    background: linear-gradient(145deg, #e2e8ec, #ffffff);
-    color: #ff014f;
     border-radius: 50%;
     padding: 0;
     width: 60px;

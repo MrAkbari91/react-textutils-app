@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import '../style.css';
 import PropTypes from 'prop-types';
 import "./Header.css"
+import '../style.css';
 
 const Header = (props) => {
     // fixed Header
@@ -11,31 +11,36 @@ const Header = (props) => {
     })
     // Toogle Menu
     const [Mobile, setMobile] = useState(false)
+
     return (
         <>
-            <header className='header'>
-                <div className='container d_flex'>
-                    <div className='logo'>
-                        <a href="#" className="text-3xl">{props.logo}</a>
-                    </div>
+            <header className='h-[65px] flex items-center justify-between px-5 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700'>
+                <div className='logo'>
+                    <a href="/" className="text-3xl dark:text-white">{props.logo}</a>
+                </div>
 
-                    <div className='navlink'>
-                        <ul className={Mobile ? "nav-links-mobile" : "link f_flex"} onClick={() => setMobile(false)}>
-                            <li>
-                                <a href='#home'>{props.home}</a>
-                            </li>
-                            <li>
-                                <a href='#features'>{props.about}</a>
-                            </li>
-                            <li>
-                                <a href='#contact'>{props.contact}</a>
-                            </li>
-                        </ul>
+                <div className='navlink flex'>
+                    <ul className={Mobile ? "nav-links-mobile dark:bg-gray-900 bg-white" : "link flex "} onClick={() => setMobile(false)}>
+                        <li>
+                            <a href='#home' className="dark:text-white">{props.home}</a>
+                        </li>
+                        <li>
+                            <a href='#features' className="dark:text-white">{props.about}</a>
+                        </li>
+                        <li>
+                            <a href='#features' className="dark:text-white">{props.services}</a>
+                        </li>
+                        <li>
+                            <a href='#contact' className="dark:text-white">{props.contact}</a>
+                        </li>
+                    </ul>
 
-                        <button className='toggle' onClick={() => setMobile(!Mobile)}>
-                            {Mobile ? <i className='fa fa-times close home-btn'></i> : <i className='fa fa-bars open home-btn'></i>}
-                        </button>
-                    </div>
+                    <button className='toggle' onClick={() => setMobile(!Mobile)}>
+                        {Mobile ? <i className='fa fa-times close home-btn'></i> : <i className='fa fa-bars open home-btn'></i>}
+                    </button>
+
+
+
                 </div>
             </header>
         </>
@@ -49,7 +54,7 @@ Header.ProtoTypes = {
 }
 
 Header.defaultProps = {
-    logo:'Add Title',
+    logo: 'Add Title',
     home: "Add nav1",
     about: "Add nav2",
     contact: "Add nav2"

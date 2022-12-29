@@ -5,7 +5,7 @@ import Header from './components/Header/Header';
 function App() {
   return (
     <>
-      <Header logo="TextUtils" home ="Home" about="About" contact="Contact Us"/>
+      <Header logo="TextUtils" home ="Home" about="About" services="Services" contact="Contact Us"/>
       <From heading='Enter the text to analyze' />
     </>
   );
