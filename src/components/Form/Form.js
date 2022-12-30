@@ -15,10 +15,10 @@ export default function From({ heading }) {
         const newText = Text.replace(/\s+/g, ' ');;
         setText(newText)
     }
-    const TitleCase = () => {
-        const newText = Text.replace(/\b\w/g, function (l) { return l.toUpperCase() })
-        setText(newText)
-    }
+    // const TitleCase = () => {
+    //     const newText = Text.replace(/\b\w/g, function (l) { return l.toUpperCase() })
+    //     setText(newText)
+    // }
 
     const Binary = () => {
         let newText = '';
@@ -27,6 +27,7 @@ export default function From({ heading }) {
         }
         setText(newText)
     }
+
     const binaryToText = () => {
         var text = Text.toString().trim().split(' ');
         text = text.map(elem => parseInt(elem, 2));
@@ -39,27 +40,42 @@ export default function From({ heading }) {
         copy(Text);
         // setText(newText)
     }
+     const trimExtraSpace = () => {
+        const newText = Text.split(/[ ]+/).join(" ");
+        setText(newText)
+
+        // setText(newText)
+    }
+
     const ClearText = () => {
         setText("")
     }
 
     const inverse = () => {
-        var s = '';
+        var newText = '';
         var i = 0;
         while (i < Text.length) {
             var n = Text.charAt(i);
-            if (n == n.toUpperCase()) {
-                // *Call* toLowerCase
+            if (n === n.toUpperCase()) {
                 n = n.toLowerCase();
             } else {
-                // *Call* toUpperCase
                 n = n.toUpperCase();
             }
             i += 1;
-            s += n;
+            newText += n;
         }
-        setText(s)
+        setText(newText)
     }
+    const TitleCase = () => {
+        let newText = Text.split(' ')
+          .map((word, index) => {
+            return word.charAt(0)
+              .toUpperCase() + word.slice(1)
+                .toLowerCase();
+          })
+          .join(' ');
+        setText(newText);
+    };
 
     const handelOnChange = (event) => {
         setText(event.target.value)
@@ -74,20 +90,25 @@ export default function From({ heading }) {
                     <h1 className='text-3xl my-3'>{heading}</h1>
                     <form>
                         <textarea id="message" rows="9" value={Text} onChange={handelOnChange} placeholder='Enter the text'></textarea>
-                        <div className="btn_primary" onClick={Uppercase}>Uppercase</div>
-                        <div className="btn_primary" onClick={lowercase}>lowercase</div>
-                        <div className="btn_primary" onClick={TitleCase}>Title case</div>
-                        <div className="btn_primary" onClick={trim}>Trim text</div>
-                        <div className="btn_primary" onClick={inverse}>Inverse </div>
-                        <div className="btn_primary" onClick={Binary}>Binary </div>
-                        <div className="btn_primary" onClick={binaryToText}>Binary to text</div>
-                        <div className="btn_primary" onClick={copyText}>Copy Text</div>
-                        <div className="btn_primary" onClick={ClearText}>Clear text</div>
+                        <div className="my-3">
+                            <div className="btn_primary" onClick={Uppercase}>Uppercase</div>
+                            <div className="btn_primary" onClick={lowercase}>lowercase</div>
+                            <div className="btn_primary" onClick={TitleCase}>Title case</div>
+                            <div className="btn_primary" onClick={trim}>Trim text</div>
+                            <div className="btn_primary" onClick={trimExtraSpace}>remove extra space</div>
+                            <div className="btn_primary" onClick={inverse}>Inverse </div>
+                            <div className="btn_primary" onClick={Binary}>Binary </div>
+                            <div className="btn_primary" onClick={binaryToText}>Binary to text</div>
+                            <div className="btn_primary" onClick={copyText}>Copy Text</div>
+                            <div className="btn_primary" onClick={ClearText}>Clear text</div>
+                            {/* <div className="btn_primary" onClick={handleTitleclick}>handel Titlecase</div> */}
+                        </div>
                     </form>
                 </div>
                 <div>
-                    <p>{Text.split(" ").length} Words And {Text.length} Character</p>
-                    <p>{0.008 * Text.split(" ").length} Minutes to read</p>
+                    <p className='capitalize'>{Text===""?"0":Text.split(" ").length} Words And {Text===""?"0":Text.length} Character</p>
+                    <p className='capitalize'>{Text===""?"0":(0.008 * Text.trim().split(" ").length).toFixed(3)} Minutes to read</p>
+                    <p className='capitalize'>{Text===""?"0":Text.split("\n").length} Number of line</p>
                 </div>
             </div>
 
