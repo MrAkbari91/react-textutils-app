@@ -3,35 +3,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #ecf0f3;
+
 }
 .container {
   max-width: 95%;
   margin: auto;
-}
-.d_flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-li {
-  list-style: none;
-}
-.uppercase {
-  text-transform: uppercase;
-}
-.capitalize {
-  text-transform: capitalize;
 }
 
 button {
@@ -62,40 +38,7 @@ button {
   box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
   border-radius: 10px;
 }
-.row,
-.left,
-.right {
-  width: 50%;
-}
-.top {
-  margin-top: 80px;
-}
-.mtop {
-  margin-top: 40px;
-}
-.heading {
-  margin: 50px 0 50px 0;
-}
-.heading h4 {
-  color: #ff014f;
-  letter-spacing: 2px;
-  font-weight: 400;
-}
-.heading h1 {
-  font-size: 60px;
-  color: #3c3e41;
-}
-h1 {
-  color: #3c3e41;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 35px;
-}
-p {
-  color: #3c3e41;
-}
+
 
 .primary_color {
   color: #ff014f;
@@ -110,19 +53,3 @@ input {
   margin-bottom: 20px;
 }
 /*----------Footer---------*/
-footer {
-  margin: 20% 0 10% 0;
-}
-footer p {
-  margin-top: 30px;
-}
-/*----------Footer---------*/
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .left,
-  .right {
-    width: 100%;
-  }
-}

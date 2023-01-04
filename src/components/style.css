@@ -1,14 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.btn_primary{
-   @apply inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight  rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out m-2 cursor-pointer capitalize
+body{
+   @apply dark:bg-gray-700
+}
+.btn_primary{ 
+   @apply inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-sm leading-tight  rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out m-2 cursor-pointer capitalize disabled:cursor-not-allowed
 }
 
 .home-btn{
-   @apply dark:bg-gray-700 dark:border-gray-300 drop-shadow-md hover:drop-shadow-2xl hover:bg-cyan-600
-}
-textarea{
-   @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+   @apply bg-gray-700 dark:bg-gray-500 dark:border-gray-300 drop-shadow-md hover:drop-shadow-2xl hover:bg-gray-500
 }

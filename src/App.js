@@ -1,9 +1,14 @@
 import './App.css';
-import React, { useEffect, useState } from "react"
+import './components/style.css';
+import React, { useState, useEffect } from "react"
 import From from './components/Form/Form';
 import Header from './components/Header/Header';
 import Alert from './components/Alert/Alert';
-import Navbar from './components/Header/Navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Binary from './components/Binary-text/Binary';
+import PageError from './components/PageNotFound/PageError';
+import Footer from './components/Footer/Footer';
+// import Navbar from './components/Header/Navbar';
 
 function App() {
   const [theme, setTheme] = useState(null)
@@ -14,10 +19,12 @@ function App() {
         document.documentElement.classList.add('dark');
         localStorage.setItem('color-theme', 'dark');
         setTheme('dark');
+        showAlert("dark mode enable");
       } else {
         document.documentElement.classList.remove('dark');
         localStorage.setItem('color-theme', 'light');
         setTheme('light');
+        showAlert("light mode enable");
       }
       // if NOT set via local storage previously
     } else {
@@ -42,13 +49,31 @@ function App() {
     }
   }, [])
 
+  const [alert, setAlert] = useState(null);
+  const showAlert = (message, type) => {
+    setAlert({
+      message: message,
+      type: type,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
 
+  }
   return (
-    <>
-      <Header logo="TextUtils" home="Home" about="About" services="Services" contact="Contact Us" />
-      {/* <Alert /> */}
-      <From heading='Enter the text to analyze' />
-    </>
+    <Router>
+      <div className='dark:bg-gray-700 dark:text-gray-100'>
+        <Header logo="TextUtils" home="Home" about="Binary" services="Services" contact="Contact Us" showAlert={showAlert} theme={theme} toggleDarkMode={toggleDarkMode} />
+        {/* <Navbar logo="TextUtils" home="Home" about="Binary" services="Services" contact="Contact Us" showAlert={showAlert} theme={theme} toggleDarkMode={toggleDarkMode} /> */}
+        <Alert alert={alert} />
+        <Routes>
+          <Route exact path="/" element={<From heading='Enter the text to analyze' showAlert={showAlert} />}></Route>
+          <Route exact path="/binary" element={<Binary heading='convert text to binary' showAlert={showAlert} />}></Route>
+          <Route path="*" element={<PageError />}></Route>
+        </Routes>
+        <Footer logo="TextUtils" home="Home" about="Binary" services="Services" contact="Contact Us" />
+      </div>
+    </Router>
   );
 }
 
