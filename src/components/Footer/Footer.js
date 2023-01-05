@@ -6,7 +6,7 @@ function Footer(props) {
     return (
 
 
-        <footer className='p-4 bg-gray-100 sm:p-6 dark:bg-gray-900 fixed bottom-0 w-full left-0'>
+        <footer className='p-4 bg-gray-100 sm:p-6 dark:bg-gray-900 absolute w-full bottom-0'>
             <hr className='my-6 border-gray-300 sm:mx-auto dark:border-gray-500 lg:my-8' />
 
             <div className='md:flex md:justify-between'>
