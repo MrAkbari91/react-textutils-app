@@ -17,7 +17,7 @@ const Header = (props) => {
 
     return (
         <>
-            <header className={`h-16 flex items-center justify-between px-5 bg-${props.theme === 'dark' ? 'gray-900':'gray-100'} border-${props.theme === 'dark' ?'gray-200': 'gray-700'}`}>
+            <header className='h-16 flex items-center justify-between px-5 dark:bg-gray-900 bg-gray-100 dark:border-gray-700 border-gray-200'>
                 <div className='logo'>
                     <Link href='/' className='text-3xl dark:text-white'>{props.logo}</Link>
                 </div>
