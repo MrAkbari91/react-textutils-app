@@ -63,7 +63,7 @@ function App() {
   return (
     <Router>
       <div className='dark:bg-gray-700 dark:text-gray-100'>
-        <Header logo='TextUtils' nav1='Home' nav2='Binary' nav3='QRcode' nav4='Contact Us' showAlert={showAlert} theme={theme} toggleDarkMode={toggleDarkMode} />
+        <Header logo='TextConvert' nav1='Home' nav2='Binary' nav3='QRcode' nav4='Contact Us' showAlert={showAlert} theme={theme} toggleDarkMode={toggleDarkMode} />
         <Alert alert={alert} />
 
         <Routes>
@@ -73,7 +73,7 @@ function App() {
           <Route path='*' element={<PageError />}></Route>
         </Routes>
 
-        <Footer logo='TextUtils' nav1='Home' nav2='Binary' nav3='QRcode' />
+        <Footer logo='TextConvert' nav1='Home' nav2='Binary' nav3='QRcode' />
       </div>
     </Router>
   );

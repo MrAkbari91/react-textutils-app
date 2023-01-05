@@ -4,13 +4,13 @@ import DocumentMeta from 'react-document-meta';
 
 function Binary({ heading, showAlert }) {
     const meta = {
-        title: 'Textcase || Decode your binary code',
+        title: 'TextConvert || Decode your binary code',
         description: 'encode text in to binary text and Decode your binary text here ',
         canonical: window.location.href,
         meta: {
             charset: 'utf-8',
             name: {
-                keywords: 'textcase, textconvert, textchange, text to binary, binary to text, decode binary text, Dhruv Akbari'
+                keywords: 'textcase, TextConvert, textchange, text to binary, binary to text, decode binary text, Dhruv Akbari'
             }
         }
     };
@@ -72,7 +72,7 @@ function Binary({ heading, showAlert }) {
 
             <div className='container my-8'>
                 <div>
-                    <h1 className='text-3xl my-3 capitalize'>{heading}</h1>
+                    <h1 className='text-3xl my-3 capitalize  tracking-widest'>{heading}</h1>
                     <textarea id='message' rows='9' value={Text} onChange={handelOnChange} className='block p-2.5 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Write your thoughts here...'></textarea>
                     <div className='my-3'>
                         <button className='btn_primary' disabled={Text.length === 0} onClick={Binary}>Binary </button>
@@ -82,9 +82,9 @@ function Binary({ heading, showAlert }) {
                     </div>
                 </div>
                 <div>
-                    <p className='capitalize'>{word} Words And {Text === '' ? '0' : Text.trim().length} Character</p>
-                    <p className='capitalize'>{Text === '' ? '0' : (0.008 * word).toFixed(3)} Minutes to read</p>
-                    <p className='capitalize'>{Text === '' ? '0' : Text.split('\n').length} Number of line</p>
+                    <p className='capitalize px-3 text-base tracking-widest'>{word} Words And {Text === '' ? '0' : Text.trim().length} Character</p>
+                    <p className='capitalize px-3 text-base tracking-widest'>{Text === '' ? '0' : (0.008 * word).toFixed(3)} Minutes to read</p>
+                    <p className='capitalize px-3 text-base tracking-widest'>{Text === '' ? '0' : Text.split('\n').length} Number of line</p>
                 </div>
             </div>
 
