@@ -9,7 +9,7 @@ body{
 }
 
 .home-btn{
-   @apply bg-gray-700 dark:bg-gray-500 dark:border-gray-300 drop-shadow-md hover:drop-shadow-2xl hover:bg-gray-500
+   @apply dark:border-gray-300 drop-shadow-md hover:drop-shadow-2xl hover:bg-gray-500
 }
 .logo{
    @apply tracking-widest

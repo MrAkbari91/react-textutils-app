@@ -4,7 +4,6 @@ import DocumentMeta from 'react-document-meta';
 
 
 export default function From({ heading, showAlert }) {
-
     const meta = {
         title: 'TextConvert || Convert your text here',
         description: 'user can convert their text to uppercase, uppercase to lowercase, remove extra spaces, count the word, count line, count length of text ',
@@ -13,7 +12,7 @@ export default function From({ heading, showAlert }) {
             charset: 'utf-8',
             name: {
                 keywords: 'textcase, textconvert, textchange, text change, change uppercase, change lowercase, remove extra space, Dhruv Akbari',
-                robots:'index, follow',
+                robots: 'index, follow',
             }
         }
     };
