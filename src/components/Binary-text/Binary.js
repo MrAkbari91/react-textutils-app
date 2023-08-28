@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
 import DocumentMeta from 'react-document-meta';
 
-function Binary({ heading, showAlert }) {
+const Binary = ({ heading, showAlert }) => {
     const meta = {
         title: 'TextConvert || Decode your binary code',
         description: 'encode text in to binary text and Decode your binary text here ',
@@ -70,7 +70,6 @@ function Binary({ heading, showAlert }) {
         <>
             <DocumentMeta {...meta} />
 
-            <div className='container my-8'>
                 <div>
                     <h1 className='text-3xl my-3 capitalize  tracking-widest'>{heading}</h1>
                     <textarea id='message' rows='9' value={Text} onChange={handelOnChange} className='block p-2.5 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Write your thoughts here...'></textarea>
@@ -86,7 +85,6 @@ function Binary({ heading, showAlert }) {
                     <p className='capitalize px-3 text-base tracking-widest'>{Text === '' ? '0' : (0.008 * word).toFixed(3)} Minutes to read</p>
                     <p className='capitalize px-3 text-base tracking-widest'>{Text === '' ? '0' : Text.split('\n').length} Number of line</p>
                 </div>
-            </div>
 
         </>
     )

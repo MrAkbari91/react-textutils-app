@@ -9,46 +9,11 @@ import Binary from './components/Binary-text/Binary';
 import PageError from './components/PageNotFound/PageError';
 import Footer from './components/Footer/Footer';
 import QRcode from './components/Qrcode/QRcode';
+import SpeechToText from './components/SpeechToText/SpeechToText';
 
 function App() {
-  const [theme, setTheme] = useState(null)
 
-  const toggleDarkMode = () => {
-    if (localStorage.getItem('color-theme')) {
-      if (localStorage.getItem('color-theme') === 'light') {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
-        setTheme('dark');
-        showAlert('dark mode enable');
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
-        setTheme('light');
-        showAlert('light mode enable');
-      }
-      // if NOT set via local storage previously
-    } else {
-      if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
-        setTheme('light');
-      } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
-        setTheme('dark');
-      }
-    }
-  }
-  useEffect(() => {
-    if (localStorage.getItem('color-theme')) {
-      if (localStorage.getItem('color-theme') === 'light') {
-        setTheme('light');
-      } else {
-        setTheme('dark');
-      }
-    }
-  }, [])
-
+  const logo = 'TextConvert';
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
     setAlert({
@@ -57,22 +22,25 @@ function App() {
     });
     setTimeout(() => {
       setAlert(null);
-    }, 1500);
+    }, 50000);
   }
   return (
     <Router>
       <div className='dark:bg-gray-700 dark:text-gray-100'>
-        <Header logo='TextConvert' nav1='Home' nav2='Binary' nav3='QRcode' nav4='Contact Us' showAlert={showAlert} theme={theme} toggleDarkMode={toggleDarkMode} />
+        <Header logo={logo} showAlert={showAlert} />
         <Alert alert={alert} />
+        <div className='container my-8 pt-8'>
 
-        <Routes>
-          <Route exact path='/' element={<From heading='Enter the text to analyze' showAlert={showAlert} />}></Route>
-          <Route exact path='/binary' element={<Binary heading='convert text to binary' showAlert={showAlert} />}></Route>
-          <Route exact path='/qrcode' element={<QRcode heading='convert text to QRcode' />}></Route>
-          <Route path='*' element={<PageError />}></Route>
-        </Routes>
+          <Routes>
+            <Route exact path='/' element={<From heading='Enter the text to analyze' showAlert={showAlert} />}></Route>
+            <Route exact path='/binary' element={<Binary heading='convert text to binary' showAlert={showAlert} />}></Route>
+            <Route exact path='/qrcode' element={<QRcode heading='convert text to QRcode' />}></Route>
+            <Route exact path='/speechtotext' element={<SpeechToText heading='Speech to text conversion' />}></Route>
+            <Route path='*' element={<PageError />}></Route>
+          </Routes>
+        </div>
 
-        <Footer logo='TextConvert' nav1='Home' nav2='Binary' nav3='QRcode' />
+        <Footer logo={logo} />
       </div>
     </Router>
   );
